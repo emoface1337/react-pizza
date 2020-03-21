@@ -5,6 +5,8 @@
       "name": "Аррива!",
       "ingridientsId": 22,
       "description": "Соус бургер, цыпленок, соус ранч, чоризо, сладкий перец, красный лук, моцарелла, томаты, чеснок",
+      "price": "от 395 ₽",
+      "imageMain": "/images/pizza/arriva/arriva-main.jpg",
       "sizes": [
         1,
         2,
@@ -12,10 +14,12 @@
       ]
     },
     {
-      "id": 1,
+      "id": 2,
       "name": "Сырная",
       "ingridientsId": 39,
       "description": "Томатный соус, моцарелла",
+      "price": "от 245 ₽",
+      "imageMain": "/images/pizza/cheese/cheese-main.jpg",
       "sizes": [
         1,
         2,
