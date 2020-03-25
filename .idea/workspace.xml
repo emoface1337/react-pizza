@@ -2,18 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57aeda10-101d-486b-a497-bafc9652f873" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Menu/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pizza/arriva/arriva-main.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/pizza/arriva/arriva-menu.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pizza/cheese/cheese-main.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/App.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Menu/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/Product/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Menu/Product/Product.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/Product/Product.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Menu/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/pizza/arriva/arriva-large.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/pizza/arriva/arriva-main.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/pizza/arriva/arriva-middle.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/pizza/cheese/cheese-large.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/pizza/cheese/cheese-main.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/pizza/cheese/cheese-medium.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/index.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +54,14 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CHVRCHES\WebstormProjects\react-pizza\src\sass" />
       <recent name="C:\Users\CHVRCHES\WebstormProjects\react-pizza\public" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\CHVRCHES\WebstormProjects\react-pizza\public" />
     </key>
   </component>
@@ -97,7 +103,12 @@
       <option name="presentableId" value="Default" />
       <updated>1584695295579</updated>
       <workItem from="1584695297027" duration="1331000" />
-      <workItem from="1584814374783" duration="5784000" />
+      <workItem from="1584814374783" duration="6922000" />
+      <workItem from="1584830587174" duration="558000" />
+      <workItem from="1585146987292" duration="4173000" />
+      <workItem from="1585153025214" duration="2345000" />
+      <workItem from="1585165687170" duration="5894000" />
+      <workItem from="1585174248454" duration="2053000" />
     </task>
     <servers />
   </component>
@@ -105,25 +116,33 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="177" key="#Inspections" timestamp="1585147395498">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="177" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1585147395498" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584695698070">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584695698070" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1584697305096">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1585174336880">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584697305096" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1584697305096">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585174336880" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1585174336880">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584697305096" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1584697305096">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585174336880" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1585174336880">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584697305096" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1584697305096">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585174336880" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1585174336880">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584697305096" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585174336880" />
+    <state x="461" y="161" key="SettingsEditor" timestamp="1585169612980">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="161" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585169612980" />
   </component>
 </project>

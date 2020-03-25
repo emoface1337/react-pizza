@@ -6,11 +6,11 @@ const Menu = ({products}) => {
         <div className="menu">
             <div className="container">
                 <div className="row">
-                    {products.map((item, index) => (
-                        <div key={index} className="col-md-3">
-                            <Product item={item}/>
-                        </div>
-                    ))}
+                    {
+                        products.map(product => (
+                            <Product product={product}/>
+                        ))
+                    }
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
       "ingridientsId": 22,
       "description": "Соус бургер, цыпленок, соус ранч, чоризо, сладкий перец, красный лук, моцарелла, томаты, чеснок",
       "price": "от 395 ₽",
-      "imageMain": "/images/pizza/arriva/arriva-main.jpg",
+      "imageMain": "/images/pizza/arriva/arriva-menu.jpg",
       "sizes": [
         1,
         2,
@@ -19,7 +19,33 @@
       "ingridientsId": 39,
       "description": "Томатный соус, моцарелла",
       "price": "от 245 ₽",
-      "imageMain": "/images/pizza/cheese/cheese-main.jpg",
+      "imageMain": "/images/pizza/cheese/cheese-menu.jpg",
+      "sizes": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Пепперони Фреш с перцем",
+      "ingridientsId": 29,
+      "description": "Пикантная пепперони, томатный соус, сладкий перец, моцарелла",
+      "price": "от 245 ₽",
+      "imageMain": "/images/pizza/pepperoni-fresh/pepperoni_fresh_pepper-menu.jpeg",
+      "sizes": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Мексиканская",
+      "ingridientsId": 29,
+      "description": "Томатный соус, острый халапеньо, сладкий перец, цыпленок, красный лук, моцарелла, соус Сальса",
+      "price": "от 445 ₽",
+      "imageMain": "/images/pizza/mexican/mexican-menu.jpg",
       "sizes": [
         1,
         2,
