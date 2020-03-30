@@ -1,9 +1,8 @@
 {
-  "pizza": [
+  "pizzas": [
     {
       "id": 1,
       "name": "Аррива!",
-      "ingridientsId": 22,
       "description": "Соус бургер, цыпленок, соус ранч, чоризо, сладкий перец, красный лук, моцарелла, томаты, чеснок",
       "price": "от 395 ₽",
       "imageMain": "/images/pizza/arriva/arriva-menu.jpg",
@@ -11,12 +10,67 @@
         1,
         2,
         3
+      ],
+      "toppings": [
+        {
+          "image": "images/toppings/mushrooms.png",
+          "name": "Грибы",
+          "prices": [
+            {
+              "price": 29,
+              "size": 1
+            },
+            {
+              "price": 39,
+              "size": 2
+            },
+            {
+              "price": 49,
+              "size": 3
+            }
+          ]
+        },
+        {
+          "image": "images/toppings/mozarella.png",
+          "name": "Сыр моцарелла",
+          "prices": [
+            {
+              "price": 49,
+              "size": 1
+            },
+            {
+              "price": 59,
+              "size": 2
+            },
+            {
+              "price": 79,
+              "size": 3
+            }
+          ]
+        },
+        {
+          "image": "images/toppings/japaleno.png",
+          "name": "Острый халапеньо",
+          "prices": [
+            {
+              "price": 29,
+              "size": 1
+            },
+            {
+              "price": 39,
+              "size": 2
+            },
+            {
+              "price": 49,
+              "size": 3
+            }
+          ]
+        }
       ]
     },
     {
       "id": 2,
       "name": "Сырная",
-      "ingridientsId": 39,
       "description": "Томатный соус, моцарелла",
       "price": "от 245 ₽",
       "imageMain": "/images/pizza/cheese/cheese-menu.jpg",
@@ -24,12 +78,67 @@
         1,
         2,
         3
+      ],
+      "toppings": [
+        {
+          "image": "images/toppings/bacon.png",
+          "name": "Бекон",
+          "prices": [
+            {
+              "price": 49,
+              "size": 1
+            },
+            {
+              "price": 59,
+              "size": 2
+            },
+            {
+              "price": 79,
+              "size": 3
+            }
+          ]
+        },
+        {
+          "image": "images/toppings/chick.png",
+          "name": "Цыплёнок",
+          "prices": [
+            {
+              "price": 49,
+              "size": 1
+            },
+            {
+              "price": 59,
+              "size": 2
+            },
+            {
+              "price": 79,
+              "size": 3
+            }
+          ]
+        },
+        {
+          "image": "images/toppings/japaleno.png",
+          "name": "Кубики брызны",
+          "prices": [
+            {
+              "price": 49,
+              "size": 1
+            },
+            {
+              "price": 59,
+              "size": 2
+            },
+            {
+              "price": 79,
+              "size": 3
+            }
+          ]
+        }
       ]
     },
     {
       "id": 3,
       "name": "Пепперони Фреш с перцем",
-      "ingridientsId": 29,
       "description": "Пикантная пепперони, томатный соус, сладкий перец, моцарелла",
       "price": "от 245 ₽",
       "imageMain": "/images/pizza/pepperoni-fresh/pepperoni_fresh_pepper-menu.jpeg",
@@ -37,12 +146,67 @@
         1,
         2,
         3
+      ],
+      "toppings": [
+        {
+          "image": "images/toppings/japaleno.png",
+          "name": "Острый халапеньо",
+          "prices": [
+            {
+              "price": 29,
+              "size": 1
+            },
+            {
+              "price": 39,
+              "size": 2
+            },
+            {
+              "price": 49,
+              "size": 3
+            }
+          ]
+        },
+        {
+          "image": "images/toppings/bacon.png",
+          "name": "Бекон",
+          "prices": [
+            {
+              "price": 49,
+              "size": 1
+            },
+            {
+              "price": 59,
+              "size": 2
+            },
+            {
+              "price": 79,
+              "size": 3
+            }
+          ]
+        },
+        {
+          "image": "images/toppings/cheddar-parmezan.png",
+          "name": " Чеддер и пармезан",
+          "prices": [
+            {
+              "price": 49,
+              "size": 1
+            },
+            {
+              "price": 59,
+              "size": 2
+            },
+            {
+              "price": 79,
+              "size": 3
+            }
+          ]
+        }
       ]
     },
     {
       "id": 4,
       "name": "Мексиканская",
-      "ingridientsId": 29,
       "description": "Томатный соус, острый халапеньо, сладкий перец, цыпленок, красный лук, моцарелла, соус Сальса",
       "price": "от 445 ₽",
       "imageMain": "/images/pizza/mexican/mexican-menu.jpg",
@@ -50,14 +214,97 @@
         1,
         2,
         3
+      ],
+      "toppings": [
+        {
+          "image": "images/toppings/mozarella.png",
+          "name": "Сыр моцарелла",
+          "prices": [
+            {
+              "price": 49,
+              "size": 1
+            },
+            {
+              "price": 59,
+              "size": 2
+            },
+            {
+              "price": 79,
+              "size": 3
+            }
+          ]
+        },
+        {
+          "image": "images/toppings/japaleno.png",
+          "name": "Острый халапеньо",
+          "prices": [
+            {
+              "price": 29,
+              "size": 1
+            },
+            {
+              "price": 39,
+              "size": 2
+            },
+            {
+              "price": 49,
+              "size": 3
+            }
+          ]
+        },
+        {
+          "image": "images/toppings/chorizo.png",
+          "name": "Острая чоризо",
+          "prices": [
+            {
+              "price": 49,
+              "size": 1
+            },
+            {
+              "price": 59,
+              "size": 2
+            },
+            {
+              "price": 79,
+              "size": 3
+            }
+          ]
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "цыплёнок",
+          "isRemovable": true
+        },
+        {
+          "name": "томатный соус",
+          "isRemovable": false
+        },
+        {
+          "name": "сладкий пепец",
+          "isRemovable": true
+        },
+        {
+          "name": "красный лук",
+          "isRemovable": true
+        },
+        {
+          "name": "моцарелла",
+          "isRemovable": false
+        },
+        {
+          "name": "острый халапеньо",
+          "isRemovable": true
+        },
+        {
+          "name": "томаты",
+          "isRemovable": true
+        },
+        {
+          "name": "соус сальса",
+          "isRemovable": false
+        }
       ]
-    }
-  ],
-  "indridients": [
-    {
-      "id": 22,
-      "hex": "#C9D1D3",
-      "name": "grey"
     }
   ]
 }

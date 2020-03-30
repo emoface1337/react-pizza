@@ -13,7 +13,7 @@ const Header = () => {
                     </div>
                     <div className="col-md-2">
                         <div className="header-button">
-                            <button className="header-button__button">Корзина</button>
+                            <button className="header-button__button button-main">Корзина</button>
                         </div>
                     </div>
                 </div>
