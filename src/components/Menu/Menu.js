@@ -1,4 +1,5 @@
 import React from "react"
+import './Menu.sass'
 import Product from "./Product/Product";
 
 const Menu = ({pizzas, popupOpen}) => {
@@ -7,9 +8,9 @@ const Menu = ({pizzas, popupOpen}) => {
             <div className="container">
                 <div className="row">
                     {
-                        pizzas.map((pizza, index) => (
+                        pizzas.map(pizza => (
                             <Product
-                                key={index}
+                                key={pizza.id}
                                 product={pizza}
                                 popupOpen={popupOpen}
                             />

@@ -1,16 +1,17 @@
 .product
   position: relative
-  height: 450px
+  height: 475px
 
   &__image
+    margin-bottom: 10px
     cursor: pointer
+
+    & img
+      width: 100%
 
     &:hover
       transform: translateY(.5%)
       animation: 2s ease-out, -webkit-transform .2s ease-out
-
-    & img
-      width: 100%
 
   &__title
     font-size: 18px
@@ -25,14 +26,15 @@
 
   &__cart
     position: absolute
-    bottom: 0
-    width: 100%
+    bottom: 15px
+    width: 223px
 
     &-price
       font-size: 22px
       font-weight: bold
 
     &-popup
+
       & button
         color: #ff6900
         padding: 10px 20px

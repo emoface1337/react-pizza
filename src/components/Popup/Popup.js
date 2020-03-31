@@ -6,15 +6,15 @@ import Ingredients from "./Ingredients/Ingredients";
 const Popup = ({pizza, popupClose}) => {
 
     const [currentPrice, setCurrentPrice] = useState(Number(pizza.price.match(/\d/g).join('')))
-    const [currentIngredients, setCurrentIngredients] = useState(pizza.ingredients)
+    const [addedToppings, setAddedToppings] = useState([])
     const [removedIngredients, setRemovedIngredients] = useState([])
 
     const onToppingClick = (newTopping) => {
-        if (!currentIngredients.some(ingredient => ingredient.name === newTopping.name)) {
-            setCurrentIngredients([...currentIngredients, {name: newTopping.name, isRemovable: false}])
+        if (!addedToppings.some(topping => topping.name === newTopping.name)) {
+            setAddedToppings([...addedToppings, {name: newTopping.name, isRemovable: false}])
             setCurrentPrice(currentPrice + newTopping.prices[0].price)
         } else {
-            setCurrentIngredients(currentIngredients.filter(ingredient => ingredient.name !== newTopping.name))
+            setAddedToppings(addedToppings.filter(topping => topping.name !== newTopping.name))
             setCurrentPrice(currentPrice - newTopping.prices[0].price)
         }
     }
@@ -47,8 +47,9 @@ const Popup = ({pizza, popupClose}) => {
                                     25 см, Традиционное тесто, 390 г
                                 </div>
                                 <Ingredients
-                                    ingredients={currentIngredients}
+                                    ingredients={pizza.ingredients}
                                     removeIngredient={removeIngredient}
+                                    addedToppings={addedToppings}
                                 />
                                 {/*<div className="pizza__size">*/}
                                 {/*    <input type="radio" id="small"/><label htmlFor="small">Маленькая</label>*/}
