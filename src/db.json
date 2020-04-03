@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Аррива!",
-      "description": "Соус бургер, цыпленок, соус ранч, чоризо, сладкий перец, красный лук, моцарелла, томаты, чеснок",
+      "description": "соус бургер, цыпленок, соус ранч, чоризо, сладкий перец, красный лук, моцарелла, томаты, чеснок",
       "price": "от 395 ₽",
       "imageMain": "/images/pizza/arriva/arriva-menu.jpg",
       "sizes": [
@@ -14,7 +14,7 @@
       "toppings": [
         {
           "image": "images/toppings/mushrooms.png",
-          "name": "Грибы",
+          "name": "грибы",
           "prices": [
             {
               "price": 29,
@@ -32,7 +32,7 @@
         },
         {
           "image": "images/toppings/mozarella.png",
-          "name": "Сыр моцарелла",
+          "name": "сыр моцарелла",
           "prices": [
             {
               "price": 49,
@@ -50,7 +50,7 @@
         },
         {
           "image": "images/toppings/japaleno.png",
-          "name": "Острый халапеньо",
+          "name": "острый халапеньо",
           "prices": [
             {
               "price": 29,
@@ -82,7 +82,7 @@
       "toppings": [
         {
           "image": "images/toppings/bacon.png",
-          "name": "Бекон",
+          "name": "бекон",
           "prices": [
             {
               "price": 49,
@@ -100,7 +100,7 @@
         },
         {
           "image": "images/toppings/chick.png",
-          "name": "Цыплёнок",
+          "name": "цыплёнок",
           "prices": [
             {
               "price": 49,
@@ -118,7 +118,7 @@
         },
         {
           "image": "images/toppings/japaleno.png",
-          "name": "Кубики брызны",
+          "name": "кубики брызны",
           "prices": [
             {
               "price": 49,
@@ -150,7 +150,7 @@
       "toppings": [
         {
           "image": "images/toppings/japaleno.png",
-          "name": "Острый халапеньо",
+          "name": "острый халапеньо",
           "prices": [
             {
               "price": 29,
@@ -168,7 +168,7 @@
         },
         {
           "image": "images/toppings/bacon.png",
-          "name": "Бекон",
+          "name": "бекон",
           "prices": [
             {
               "price": 49,
@@ -186,7 +186,7 @@
         },
         {
           "image": "images/toppings/cheddar-parmezan.png",
-          "name": " Чеддер и пармезан",
+          "name": " чеддер и пармезан",
           "prices": [
             {
               "price": 49,
@@ -207,7 +207,7 @@
     {
       "id": 4,
       "name": "Мексиканская",
-      "description": "Томатный соус, острый халапеньо, сладкий перец, цыпленок, красный лук, моцарелла, соус Сальса",
+      "description": "Томатный соус, острый халапеньо, сладкий перец, цыпленок, красный лук, моцарелла, соус сальса",
       "price": "от 445 ₽",
       "imageMain": "/images/pizza/mexican/mexican-menu.jpg",
       "sizes": [
@@ -218,7 +218,7 @@
       "toppings": [
         {
           "image": "images/toppings/mozarella.png",
-          "name": "Сыр моцарелла",
+          "name": "сыр моцарелла",
           "prices": [
             {
               "price": 49,
@@ -236,7 +236,7 @@
         },
         {
           "image": "images/toppings/japaleno.png",
-          "name": "Острый халапеньо",
+          "name": "острый халапеньо",
           "prices": [
             {
               "price": 29,
@@ -254,7 +254,7 @@
         },
         {
           "image": "images/toppings/chorizo.png",
-          "name": "Острая чоризо",
+          "name": "острая чоризо",
           "prices": [
             {
               "price": 49,

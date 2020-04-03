@@ -1,7 +1,7 @@
 import React from "react";
 import Ingredient from "./Ingredient";
 
-const Ingredients = ({ingredients, removeIngredient, addedToppings}) => {
+const Ingredients = ({ingredients, addedToppings, removeIngredient}) => {
 
     return (
         <div className="pizza__ingredients">
@@ -11,8 +11,9 @@ const Ingredients = ({ingredients, removeIngredient, addedToppings}) => {
                         <Ingredient
                             key={index}
                             ingredient={ingredient}
-                            removeIngredient={removeIngredient}
+                            isLast={ingredients.length-1 === index}
                             addedToppings={addedToppings}
+                            removeIngredient={removeIngredient}
                         />
                     )
                 })
@@ -23,13 +24,15 @@ const Ingredients = ({ingredients, removeIngredient, addedToppings}) => {
                         return (
                             <Ingredient
                                 key={index}
-                                ingredient={topping}
+                                ingredient={undefined}
+                                topping={topping}
                             />
                         )
                     })
                     :
                     null
             }
+
         </div>
     )
 }

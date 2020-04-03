@@ -27,7 +27,6 @@ const Popup = ({pizza, popupClose}) => {
         }
     }
 
-
     return (
         <div className="modal-popup">
             <div className="popup">
@@ -48,8 +47,8 @@ const Popup = ({pizza, popupClose}) => {
                                 </div>
                                 <Ingredients
                                     ingredients={pizza.ingredients}
-                                    removeIngredient={removeIngredient}
                                     addedToppings={addedToppings}
+                                    removeIngredient={removeIngredient}
                                 />
                                 {/*<div className="pizza__size">*/}
                                 {/*    <input type="radio" id="small"/><label htmlFor="small">Маленькая</label>*/}
