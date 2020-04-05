@@ -1,24 +1,23 @@
 import React from "react"
 import './Menu.sass'
-import Product from "./Product/Product";
+import Category from "./Category/Category";
 
-const Menu = ({pizzas, popupOpen}) => {
+const Menu = ({categories, popupOpen}) => {
     return (
-        <div className="menu">
-            <div className="container">
-                <div className="row">
-                    {
-                        pizzas.map(pizza => (
-                            <Product
-                                key={pizza.id}
-                                product={pizza}
-                                popupOpen={popupOpen}
-                            />
-                        ))
-                    }
-                </div>
-            </div>
-        </div>
+        <main>
+            {
+                categories ?
+                    categories.map(category => (
+                        <Category
+                            key={category.id}
+                            category={category}
+                            popupOpen={popupOpen}
+                        />
+                    ))
+                    :
+                    null
+            }
+        </main>
     )
 }
 

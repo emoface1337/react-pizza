@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom'
 
 import './Header.sass'
 
-const Header = () => {
+const Header = ({cartCount}) => {
 
     let history = useHistory()
 
@@ -26,7 +26,7 @@ const Header = () => {
                     </div>
                     <div className="col-md-2">
                         <div className="header-button">
-                            <button className="header-button__button button-main" onClick={handleButtonClick}>Корзина
+                            <button className="header-button__button button-main" onClick={handleButtonClick}>Корзина ({cartCount})
                             </button>
                         </div>
                     </div>

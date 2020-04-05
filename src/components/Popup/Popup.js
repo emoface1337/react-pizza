@@ -3,11 +3,11 @@ import './Popup.sass'
 import Toppings from "./Toppings/Toppings";
 import Ingredients from "./Ingredients/Ingredients";
 
-const Popup = ({pizza, popupClose}) => {
+const Popup = ({product, addToCart, popupClose}) => {
 
-    const [currentPrice, setCurrentPrice] = useState(Number(pizza.price.match(/\d/g).join('')))
-    const [addedToppings, setAddedToppings] = useState([])
+    const [currentPrice, setCurrentPrice] = useState(Number(product.price.match(/\d/g).join('')))
     const [removedIngredients, setRemovedIngredients] = useState([])
+    const [addedToppings, setAddedToppings] = useState([])
 
     const onToppingClick = (newTopping) => {
         if (!addedToppings.some(topping => topping.name === newTopping.name)) {
@@ -36,17 +36,17 @@ const Popup = ({pizza, popupClose}) => {
                             <div className="pizza-preview d-flex align-items-center justify-content-center">
                                 <img className="pizza-preview__image"
                                      src="/images/pizza/arriva/arriva-small.jpg"
-                                     alt={pizza.name}/>
+                                     alt={product.name}/>
                             </div>
                         </div>
                         <div className="col-md-5">
                             <div className="pizza-configurator">
-                                <div className="pizza__title">{pizza.name}</div>
+                                <div className="pizza__title">{product.name}</div>
                                 <div className="pizza__info">
                                     25 см, Традиционное тесто, 390 г
                                 </div>
                                 <Ingredients
-                                    ingredients={pizza.ingredients}
+                                    ingredients={product.ingredients}
                                     addedToppings={addedToppings}
                                     removeIngredient={removeIngredient}
                                 />
@@ -61,12 +61,13 @@ const Popup = ({pizza, popupClose}) => {
                                 {/*    <input type="radio" id="thin"/><label htmlFor="thin">Тонкое</label>*/}
                                 {/*</div>*/}
                                 <Toppings
-                                    toppings={pizza.toppings}
+                                    toppings={product.toppings}
                                     onToppingClick={onToppingClick}
                                     // isSelected={isSelected}
                                 />
-                                <button className="pizza__add-cart button-main">Добавить в корзину
-                                    за {currentPrice} ₽
+                                <button className="pizza__add-cart button-main"
+                                        onClick={() => addToCart(product, removedIngredients, addedToppings, currentPrice)}
+                                >Добавить в корзину за {currentPrice} ₽
                                 </button>
                             </div>
                         </div>

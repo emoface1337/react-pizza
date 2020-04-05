@@ -24,14 +24,14 @@ const Topping = ({topping, onToppingClick}) => {
                 <div className="toppings-item__add">
                     {
                         isSelected ?
-                            <svg width="25" height="25" viewBox="0 0 25 26" fill="none"
+                            <svg width="25" height="25" viewBox="0 0 25 26" fill="black"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <rect width="25" height="25" rx="12.5"/>
                                 <path fill="#ffffff" fillRule="evenodd" clipRule="evenodd"
                                       d="M18.8176 10.1346C19.1941 9.75658 19.1928 9.14489 18.8148 8.76838C18.4367 8.39187 17.825 8.39312 17.4485 8.77117L11.217 15.0282L8.45194 12.2631C8.07466 11.8858 7.46297 11.8858 7.08569 12.2631C6.70841 12.6404 6.70841 13.2521 7.08569 13.6294L10.5333 17.077C10.6924 17.2361 10.8933 17.3281 11.1006 17.353C11.3866 17.3884 11.6854 17.296 11.9045 17.076L18.8176 10.1346Z"/>
                             </svg>
                             :
-                            <svg width="25" height="25" viewBox="0 0 25 26" fill="none"
+                            <svg width="25" height="25" viewBox="0 0 25 26" fill="seagreen"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <rect width="25" height="25" rx="12.5"/>
                                 <path fill="#ffffff" fillRule="evenodd"

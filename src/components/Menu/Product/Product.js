@@ -3,7 +3,7 @@ import './Product.sass'
 
 const Product = ({product, popupOpen}) => {
     return (
-        <div key={product.id} className="col-md-3">
+        <div className="col-md-3">
             <div className="product">
                 <div className="product__image" onClick={() => popupOpen(product.id)}>
                     <img src={product.imageMain} alt={product.name}/>
