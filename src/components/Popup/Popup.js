@@ -5,17 +5,17 @@ import Ingredients from "./Ingredients/Ingredients";
 
 const Popup = ({product, addToCart, popupClose}) => {
 
-    const [currentPrice, setCurrentPrice] = useState(Number(product.price.match(/\d/g).join('')))
+    const [cartPrice, setCartPrice] = useState(Number(product.price.match(/\d/g).join('')))
     const [removedIngredients, setRemovedIngredients] = useState([])
     const [addedToppings, setAddedToppings] = useState([])
 
     const onToppingClick = (newTopping) => {
         if (!addedToppings.some(topping => topping.name === newTopping.name)) {
             setAddedToppings([...addedToppings, {name: newTopping.name, isRemovable: false}])
-            setCurrentPrice(currentPrice + newTopping.prices[0].price)
+            setCartPrice(cartPrice + newTopping.prices[0].price)
         } else {
             setAddedToppings(addedToppings.filter(topping => topping.name !== newTopping.name))
-            setCurrentPrice(currentPrice - newTopping.prices[0].price)
+            setCartPrice(cartPrice - newTopping.prices[0].price)
         }
     }
 
@@ -66,8 +66,8 @@ const Popup = ({product, addToCart, popupClose}) => {
                                     // isSelected={isSelected}
                                 />
                                 <button className="pizza__add-cart button-main"
-                                        onClick={() => addToCart(product, removedIngredients, addedToppings, currentPrice)}
-                                >Добавить в корзину за {currentPrice} ₽
+                                        onClick={() => addToCart(product, removedIngredients, addedToppings, cartPrice)}
+                                >Добавить в корзину за {cartPrice} ₽
                                 </button>
                             </div>
                         </div>

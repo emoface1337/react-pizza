@@ -2,7 +2,6 @@ import React from "react";
 import './Product.sass'
 
 const Product = ({product, popupOpen, addToCart}) => {
-    console.log(product)
     return (
         <div className="col-md-3">
             <div className="product">

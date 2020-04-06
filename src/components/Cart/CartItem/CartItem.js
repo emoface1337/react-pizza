@@ -1,7 +1,7 @@
 import React from 'react'
 import './CartItem.sass'
 
-const CartItem = ({item, removeItem}) => {
+const CartItem = ({item, removeItem, decrementCount, incrementCount}) => {
     console.log(item)
     return (
         <div className="list-item d-flex flex-row align-items-center">
@@ -29,7 +29,7 @@ const CartItem = ({item, removeItem}) => {
                 </div>
             </div>
             <div className="list-item__control d-flex align-items-center">
-                <button>
+                <button onClick={() => decrementCount(item)}>
                     <i className="svg-icon">
                         <svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1">
                             <g>
@@ -40,7 +40,7 @@ const CartItem = ({item, removeItem}) => {
                     </i>
                 </button>
                 <div className="list-item__control-count">{item.count}</div>
-                <button>
+                <button onClick={() => incrementCount(item)}>
                     <i className="svg-icon">
                         <svg width="10px" height="10px" viewBox="0 0 10 10" fill="seagreen">
                             <g>
@@ -53,7 +53,7 @@ const CartItem = ({item, removeItem}) => {
                     </i>
                 </button>
             </div>
-            <div className="list-item__price">{item.currentPrice && item.currentPrice ? `${item.currentPrice} ₽`: item.price}</div>
+            <div className="list-item__price">{item.cartPrice && item.cartPrice ? `${item.cartPrice} ₽`: null}</div>
             <div className="list-item__remove" onClick={() => removeItem(item)}>
                 <i className="svg-icon">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="red">

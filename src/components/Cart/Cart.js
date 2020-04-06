@@ -2,7 +2,7 @@ import React from 'react'
 import './Cart.sass'
 import CartItem from "./CartItem/CartItem";
 
-const Cart = ({cartItems, removeItem}) => {
+const Cart = ({cartItems, removeItem, decrementCount, incrementCount}) => {
     console.log(cartItems)
     return (
         <section>
@@ -14,11 +14,13 @@ const Cart = ({cartItems, removeItem}) => {
                             <div className="cart-list">
                                 {
                                     cartItems.length > 0 ?
-                                        cartItems.map((item,index) => (
+                                        cartItems.map((item, index) => (
                                             <CartItem
                                                 key={index}
                                                 item={item}
                                                 removeItem={removeItem}
+                                                decrementCount={decrementCount}
+                                                incrementCount={incrementCount}
                                             />
                                         ))
                                         : "Добавьте что-то в корзину из меню"

@@ -22,7 +22,7 @@ const App = () => {
             })
     }, [])
 
-    const addToCart = (product, removedIngredients, addedToppings, currentPrice) => {
+    const addToCart = (product, removedIngredients, addedToppings, cartPrice) => {
         setPopupVisible(false)
         let newItem = {}
 
@@ -36,20 +36,20 @@ const App = () => {
                     if (JSON.stringify(item) === JSON.stringify(newItem)) {
                         let newItem = Object.assign({}, item);
                         newItem.count = item.count++
-                        newItem.currentPrice += currentPrice
+                        newItem.cartPrice += cartPrice
                         return newItem
                     } else {
                         return item
                     }
                 })
             } else {
-                newItem = {...product, count: 1, removedIngredients, addedToppings, currentPrice}
+                newItem = {...product, count: 1, removedIngredients, addedToppings, cartPrice}
                 setCartItems([...cartItems, newItem])
             }
         }
 
         if (cartItems.length === 0) {
-            newItem = {...product, count: 1, removedIngredients, addedToppings, currentPrice}
+            newItem = {...product, count: 1, removedIngredients, addedToppings, cartPrice}
             setCartItems([...cartItems, newItem])
         }
         setCartCount(cartCount + 1)
@@ -61,6 +61,31 @@ const App = () => {
         )
         setCartItems(newItems)
         setCartCount(cartCount - item.count)
+    }
+
+    const decrementCount = (product) => {
+        const newItems = cartItems.map(item => {
+            if (JSON.stringify(item) === JSON.stringify(product)) {
+                item.cartPrice -= item.cartPrice / item.count
+                item.count--
+            }
+            return item
+        })
+
+        setCartItems(newItems.filter(item => item.count !== 0))
+        setCartCount(cartCount - 1)
+    }
+
+    const incrementCount = (product) => {
+        const newItems = cartItems.map(item => {
+            if (JSON.stringify(item) === JSON.stringify(product)) {
+                item.cartPrice += item.cartPrice / item.count
+                item.count++
+            }
+            return item
+        })
+        setCartItems(newItems)
+        setCartCount(cartCount + 1)
     }
 
     const popupOpen = (productId) => {
@@ -83,8 +108,11 @@ const App = () => {
         <Router>
             <div className={"pizza-app"}>
                 <Header cartCount={cartCount}/>
-                <Route exact path="/" component={() => <Menu categories={categories} popupOpen={popupOpen} addToCart={addToCart}/>}/>
-                <Route exact path="/cart" component={() => <Cart cartItems={cartItems} removeItem={removeItem}/>}/>
+                <Route exact path="/"
+                       component={() => <Menu categories={categories} popupOpen={popupOpen} addToCart={addToCart}/>}/>
+                <Route exact path="/cart"
+                       component={() => <Cart cartItems={cartItems} removeItem={removeItem}
+                                              decrementCount={decrementCount} incrementCount={incrementCount}/>}/>
                 {
                     isPopupVisible ?
                         <Popup
