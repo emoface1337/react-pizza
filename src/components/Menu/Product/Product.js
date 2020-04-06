@@ -1,7 +1,8 @@
 import React from "react";
 import './Product.sass'
 
-const Product = ({product, popupOpen}) => {
+const Product = ({product, popupOpen, addToCart}) => {
+    console.log(product)
     return (
         <div className="col-md-3">
             <div className="product">
@@ -15,7 +16,7 @@ const Product = ({product, popupOpen}) => {
                     <div className="product__cart-price">{product.price}</div>
                     <div className="product__cart-popup">
                         <button className="button-main" type="button" data-toggle="modal" data-target="#pizza-modal"
-                                onClick={() => popupOpen(product.id)}>
+                                onClick={product.categoryId === 1 ? () => popupOpen(product.id) : () => addToCart(product)}>
                             Выбрать
                         </button>
                     </div>

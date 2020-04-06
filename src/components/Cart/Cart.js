@@ -2,7 +2,7 @@ import React from 'react'
 import './Cart.sass'
 import CartItem from "./CartItem/CartItem";
 
-const Cart = ({cartItems}) => {
+const Cart = ({cartItems, removeItem}) => {
     console.log(cartItems)
     return (
         <section>
@@ -18,6 +18,7 @@ const Cart = ({cartItems}) => {
                                             <CartItem
                                                 key={index}
                                                 item={item}
+                                                removeItem={removeItem}
                                             />
                                         ))
                                         : "Добавьте что-то в корзину из меню"

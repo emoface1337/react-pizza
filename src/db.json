@@ -67,6 +67,44 @@
             }
           ]
         }
+      ],
+      "ingredients": [
+        {
+          "name": "соус бургер",
+          "isRemovable": false
+        },
+        {
+          "name": "цыплёнок",
+          "isRemovable": true
+        },
+        {
+          "name": "соус ранч",
+          "isRemovable": false
+        },
+        {
+          "name": "чоризо",
+          "isRemovable": true
+        },
+        {
+          "name": "сладкий перец",
+          "isRemovable": true
+        },
+        {
+          "name": "красный лук",
+          "isRemovable": true
+        },
+        {
+          "name": "моцарелла",
+          "isRemovable": false
+        },
+        {
+          "name": "томаты",
+          "isRemovable": true
+        },
+        {
+          "name": "чеснок",
+          "isRemovable": true
+        }
       ]
     },
     {
@@ -136,6 +174,16 @@
             }
           ]
         }
+      ],
+      "ingredients": [
+        {
+          "name": "томатный соус",
+          "isRemovable": false
+        },
+        {
+          "name": "моцарелла",
+          "isRemovable": false
+        }
       ]
     },
     {
@@ -204,6 +252,24 @@
               "size": 3
             }
           ]
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "пикантная пепперони",
+          "isRemovable": true
+        },
+        {
+          "name": "томатный соус",
+          "isRemovable": false
+        },
+        {
+          "name": "сладкий пепец",
+          "isRemovable": true
+        },
+        {
+          "name": "моцарелла",
+          "isRemovable": false
         }
       ]
     },

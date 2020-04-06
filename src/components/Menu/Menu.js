@@ -2,7 +2,7 @@ import React from "react"
 import './Menu.sass'
 import Category from "./Category/Category";
 
-const Menu = ({categories, popupOpen}) => {
+const Menu = ({categories, popupOpen, addToCart}) => {
     return (
         <main>
             {
@@ -12,6 +12,7 @@ const Menu = ({categories, popupOpen}) => {
                             key={category.id}
                             category={category}
                             popupOpen={popupOpen}
+                            addToCart={addToCart}
                         />
                     ))
                     :

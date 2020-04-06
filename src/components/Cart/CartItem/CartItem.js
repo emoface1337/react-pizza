@@ -1,7 +1,7 @@
 import React from 'react'
 import './CartItem.sass'
 
-const CartItem = ({item}) => {
+const CartItem = ({item, removeItem}) => {
     console.log(item)
     return (
         <div className="list-item d-flex flex-row align-items-center">
@@ -14,14 +14,14 @@ const CartItem = ({item}) => {
                     Средняя 30 см, тонкое тесто
                     <div className="list-item__product-ingredients">
                         {
-                            item.addedToppings.length > 0 ? `Добавлено: ${item.addedToppings.map(topping => (
+                            item.addedToppings && item.addedToppings.length > 0 ? `Добавлено: ${item.addedToppings.map(topping => (
                                 topping.name
                             )).join(', ')}` : null
                         }
                     </div>
                     <div className="list-item__product-ingredients">
                         {
-                            item.removedIngredients.length > 0 ? `Убрано: ${item.removedIngredients.map(ingredient => (
+                            item.removedIngredients && item.removedIngredients.length > 0 ? `Убрано: ${item.removedIngredients.map(ingredient => (
                                 ingredient.name
                             )).join(', ')}` : null
                         }
@@ -53,8 +53,8 @@ const CartItem = ({item}) => {
                     </i>
                 </button>
             </div>
-            <div className="list-item__price">{item.currentPrice} ₽</div>
-            <div className="list-item__remove">
+            <div className="list-item__price">{item.currentPrice && item.currentPrice ? `${item.currentPrice} ₽`: item.price}</div>
+            <div className="list-item__remove" onClick={() => removeItem(item)}>
                 <i className="svg-icon">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="red">
                         <path
