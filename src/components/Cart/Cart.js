@@ -23,8 +23,11 @@ const Cart = ({cartItems, removeItem, decrementCount, incrementCount}) => {
                                                 incrementCount={incrementCount}
                                             />
                                         ))
-                                        : "Добавьте что-то в корзину из меню"
+                                        : <span>Добавьте что-то в корзину из меню</span>
                                 }
+                            </div>
+                            <div className="cart__sum">
+                                <span className="sum__text">Сумма заказа: </span><span className="sum__value">{cartItems.length > 0 ? `${cartItems.reduce((sum, item) => sum + item.cartPrice, 0)} ₽` : '0 ₽'}</span>
                             </div>
                         </div>
                     </div>
