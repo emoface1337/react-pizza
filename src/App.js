@@ -37,7 +37,10 @@ const App = () => {
                     if (JSON.stringify(item) === JSON.stringify(newItem)) {
                         let newItem = Object.assign({}, item);
                         newItem.count = item.count + 1
-                        newItem.cartPrice += cartPrice
+                        if (product.categoryId === 1)
+                            newItem.cartPrice += cartPrice
+                        else
+                            newItem.cartPrice += Number(item.price.match(/\d/g).join(''))
                         return newItem
                     } else {
                         return item
@@ -45,13 +48,31 @@ const App = () => {
                 })
                 setCartItems([...newItems])
             } else {
-                newItem = {...product, count: 1, removedIngredients, addedToppings, cartPrice}
+                if (product.categoryId === 1)
+                    newItem = {...product, count: 1, removedIngredients, addedToppings, cartPrice}
+                else
+                    newItem = {
+                        ...product,
+                        count: 1,
+                        removedIngredients,
+                        addedToppings,
+                        cartPrice: Number(product.price.match(/\d/g).join(''))
+                    }
                 setCartItems([...cartItems, newItem])
             }
         }
 
         if (cartItems.length === 0) {
-            newItem = {...product, count: 1, removedIngredients, addedToppings, cartPrice}
+            if (product.categoryId === 1)
+                newItem = {...product, count: 1, removedIngredients, addedToppings, cartPrice}
+            else
+                newItem = {
+                    ...product,
+                    count: 1,
+                    removedIngredients,
+                    addedToppings,
+                    cartPrice: Number(product.price.match(/\d/g).join(''))
+                }
             setCartItems([newItem])
         }
         setCartCount((c) => c + 1)
