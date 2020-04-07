@@ -25,6 +25,7 @@ const App = () => {
     const addToCart = (product, removedIngredients, addedToppings, cartPrice) => {
         setPopupVisible(false)
         let newItem = {}
+        let newItems = []
 
         if (cartItems.length > 0) {
             newItem = cartItems.find(item => item.id === product.id
@@ -32,16 +33,17 @@ const App = () => {
                 && JSON.stringify(item.addedToppings) === JSON.stringify(addedToppings))
 
             if (newItem !== undefined) {
-                cartItems.map(item => {
+                newItems = cartItems.map(item => {
                     if (JSON.stringify(item) === JSON.stringify(newItem)) {
                         let newItem = Object.assign({}, item);
-                        newItem.count = item.count++
+                        newItem.count = item.count + 1
                         newItem.cartPrice += cartPrice
                         return newItem
                     } else {
                         return item
                     }
                 })
+                setCartItems([...newItems])
             } else {
                 newItem = {...product, count: 1, removedIngredients, addedToppings, cartPrice}
                 setCartItems([...cartItems, newItem])
@@ -50,9 +52,9 @@ const App = () => {
 
         if (cartItems.length === 0) {
             newItem = {...product, count: 1, removedIngredients, addedToppings, cartPrice}
-            setCartItems([...cartItems, newItem])
+            setCartItems([newItem])
         }
-        setCartCount(cartCount + 1)
+        setCartCount((c) => c + 1)
     }
 
     const removeItem = (item) => {
@@ -60,7 +62,7 @@ const App = () => {
             cartItem !== item
         )
         setCartItems(newItems)
-        setCartCount(cartCount - item.count)
+        setCartCount((c) => c - item.count)
     }
 
     const decrementCount = (product) => {
@@ -71,9 +73,8 @@ const App = () => {
             }
             return item
         })
-
         setCartItems(newItems.filter(item => item.count !== 0))
-        setCartCount(cartCount - 1)
+        setCartCount((c) => c - 1)
     }
 
     const incrementCount = (product) => {
@@ -85,7 +86,7 @@ const App = () => {
             return item
         })
         setCartItems(newItems)
-        setCartCount(cartCount + 1)
+        setCartCount((c) => c + 1)
     }
 
     const popupOpen = (productId) => {
