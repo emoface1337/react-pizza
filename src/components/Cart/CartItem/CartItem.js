@@ -4,7 +4,7 @@ import './CartItem.sass'
 const CartItem = ({item, removeItem, decrementCount, incrementCount}) => {
     console.log(item)
     return (
-        <div className="list-item d-flex flex-row align-items-center">
+        <div className="list-item d-flex flex-row align-items-center justify-content-between">
             <div className="list-item__image">
                 <img src={item.imageMain} alt={item.name}/>
             </div>

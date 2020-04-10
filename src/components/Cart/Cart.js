@@ -1,9 +1,16 @@
 import React from 'react'
+import {useHistory} from 'react-router-dom'
 import './Cart.sass'
 import CartItem from "./CartItem/CartItem";
 
 const Cart = ({cartItems, removeItem, decrementCount, incrementCount}) => {
-    console.log(cartItems)
+    // console.log(cartItems)
+
+    let history = useHistory()
+    const handleGoHomeButtonClick = () => {
+        history.push('/')
+    }
+
     return (
         <section>
             <div className="container">
@@ -27,7 +34,17 @@ const Cart = ({cartItems, removeItem, decrementCount, incrementCount}) => {
                                 }
                             </div>
                             <div className="cart__sum">
-                                <span className="sum__text">Сумма заказа: </span><span className="sum__value">{cartItems.length > 0 ? `${cartItems.reduce((sum, item) => sum + item.cartPrice, 0)} ₽` : '0 ₽'}</span>
+                                <span className="sum__text">Сумма заказа: </span><span
+                                className="sum__value">{cartItems.length > 0 ? `${cartItems.reduce((sum, item) => sum + item.cartPrice, 0)} ₽` : '0 ₽'}</span>
+                            </div>
+                            <div className="cart-footer d-flex justify-content-between">
+                                <button className="button-main footer__home-button" type="button"
+                                        onClick={handleGoHomeButtonClick}>
+                                    Вернутся в меню
+                                </button>
+                                <button className="button-main footer__order-button" type="button">
+                                    Заказать
+                                </button>
                             </div>
                         </div>
                     </div>

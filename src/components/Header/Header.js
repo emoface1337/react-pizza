@@ -7,7 +7,7 @@ const Header = ({cartCount}) => {
 
     let history = useHistory()
 
-    const handleButtonClick = () => {
+    const handleCartButtonClick = () => {
         history.push('/cart')
     }
 
@@ -18,7 +18,7 @@ const Header = ({cartCount}) => {
     return (
         <header className="header">
             <div className="container">
-                <div className="row">
+                <div className="row align-items-center">
                     <div className="col-md-10">
                         <div className="header-logo">
                             <h1 onClick={handleLogoClick}>Hello Pizza</h1>
@@ -26,7 +26,7 @@ const Header = ({cartCount}) => {
                     </div>
                     <div className="col-md-2">
                         <div className="header-button">
-                            <button className="header-button__button button-main" onClick={handleButtonClick}>Корзина ({cartCount})
+                            <button className="header-button__button button-main" onClick={handleCartButtonClick}>Корзина ({cartCount})
                             </button>
                         </div>
                     </div>
