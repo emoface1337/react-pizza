@@ -2,7 +2,7 @@ import React from "react"
 import './Category.sass'
 import Product from "../Product/Product";
 
-const Category = ({category, popupOpen, addToCart}) => {
+const Category = ({category, popupOpen, addToCart, currentSelectedProducts, unselectProduct}) => {
     return (
         <section className="category">
             <div className="container">
@@ -15,6 +15,8 @@ const Category = ({category, popupOpen, addToCart}) => {
                                 product={product}
                                 popupOpen={popupOpen}
                                 addToCart={addToCart}
+                                currentSelectedProducts={currentSelectedProducts}
+                                unselectProduct={unselectProduct}
                             />
                         ))
                     }

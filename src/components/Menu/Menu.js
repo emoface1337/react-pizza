@@ -2,7 +2,7 @@ import React from "react"
 import './Menu.sass'
 import Category from "./Category/Category";
 
-const Menu = ({categories, popupOpen, addToCart}) => {
+const Menu = ({categories, popupOpen, addToCart, currentSelectedProducts, unselectProduct}) => {
     return (
         <main>
             {
@@ -13,6 +13,8 @@ const Menu = ({categories, popupOpen, addToCart}) => {
                             category={category}
                             popupOpen={popupOpen}
                             addToCart={addToCart}
+                            currentSelectedProducts={currentSelectedProducts}
+                            unselectProduct={unselectProduct}
                         />
                     ))
                     :

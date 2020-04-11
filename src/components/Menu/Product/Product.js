@@ -1,11 +1,16 @@
-import React from "react";
+import React from "react"
 import './Product.sass'
 
-const Product = ({product, popupOpen, addToCart}) => {
+const Product = ({product, popupOpen, addToCart, currentSelectedProducts, unselectProduct}) => {
     return (
         <div className="col-md-3">
             <div className="product">
-                <div className="product__image" onClick={() => popupOpen(product.id)}>
+                <div className="product__image" style={product.categoryId === 1 ? {cursor: 'pointer'} : null} onClick={
+                    product.categoryId === 1 ?
+                        () => popupOpen(product.id)
+                        :
+                        null
+                }>
                     <img src={product.imageMain} alt={product.name}/>
                 </div>
                 <div className="product__title">{product.name}</div>
@@ -14,10 +19,28 @@ const Product = ({product, popupOpen, addToCart}) => {
                 <div className="product__cart d-flex align-items-center justify-content-between">
                     <div className="product__cart-price">{product.price}</div>
                     <div className="product__cart-popup">
-                        <button className="button-main" type="button" data-toggle="modal" data-target="#pizza-modal"
-                                onClick={product.categoryId === 1 ? () => popupOpen(product.id) : () => addToCart(product)}>
-                            {product.categoryId === 1 ? `Выбрать` : `В корзину`}
-                        </button>
+                        {
+                            currentSelectedProducts.find(selectedProductId => selectedProductId === product.id) !== undefined
+                            && product.categoryId !== 1 ?
+                                <button className="button-main" type="button"
+                                        style={{backgroundColor: 'seagreen', color: '#ffffff'}}
+                                        onClick={
+                                            () => unselectProduct(product.id)
+                                        }>
+                                    В корзине
+                                </button>
+                                :
+                                <button className="button-main" type="button" data-toggle="modal"
+                                        data-target="#pizza-modal"
+                                        onClick={
+                                            product.categoryId === 1 ?
+                                                () => popupOpen(product.id)
+                                                :
+                                                () => addToCart(product)
+                                        }>
+                                    {product.categoryId === 1 ? `Выбрать` : `В корзину`}
+                                </button>
+                        }
                     </div>
                 </div>
             </div>

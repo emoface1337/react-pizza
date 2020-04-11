@@ -14,6 +14,7 @@ const App = () => {
     const [cartItems, setCartItems] = useState([])
     const [cartCount, setCartCount] = useState(0)
     const [isPopupVisible, setPopupVisible] = useState(false)
+    const [currentSelectedProducts, setCurrentSelectedProducts] = useState([])
 
     useEffect(() => {
         axios.get('http://localhost:3001/categories?_embed=products')
@@ -75,6 +76,9 @@ const App = () => {
                 }
             setCartItems([newItem])
         }
+
+        if (currentSelectedProducts.find(selectedProductId => selectedProductId === product.id) === undefined)
+            setCurrentSelectedProducts([...currentSelectedProducts, product.id])
         setCartCount((c) => c + 1)
     }
 
@@ -84,6 +88,16 @@ const App = () => {
         )
         setCartItems(newItems)
         setCartCount((c) => c - item.count)
+    }
+
+    const unselectProduct = (productId) => {
+
+        const newSelectedProducts = currentSelectedProducts.filter(selectedProductId => selectedProductId !== productId)
+        const newItems = cartItems.filter(cartItem => cartItem.id !== productId)
+
+        setCartItems(newItems)
+        setCartCount((c) => c - 1)
+        setCurrentSelectedProducts(newSelectedProducts)
     }
 
     const decrementCount = (product) => {
@@ -131,7 +145,9 @@ const App = () => {
             <div className={"pizza-app"}>
                 <Header cartCount={cartCount}/>
                 <Route exact path="/"
-                       component={() => <Menu categories={categories} popupOpen={popupOpen} addToCart={addToCart}/>}/>
+                       component={() => <Menu categories={categories} popupOpen={popupOpen} addToCart={addToCart}
+                                              currentSelectedProducts={currentSelectedProducts}
+                                              unselectProduct={unselectProduct}/>}/>
                 <Route exact path="/cart"
                        component={() => <Cart cartItems={cartItems} removeItem={removeItem}
                                               decrementCount={decrementCount} incrementCount={incrementCount}/>}/>
