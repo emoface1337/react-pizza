@@ -1,7 +1,7 @@
 import React from "react"
 import './Product.sass'
 
-const Product = ({product, popupOpen, addToCart, currentSelectedProducts, unselectProduct}) => {
+const Product = ({product, popupOpen, addToCart, cartItems, removeItem}) => {
     return (
         <div className="col-md-3">
             <div className="product">
@@ -20,13 +20,12 @@ const Product = ({product, popupOpen, addToCart, currentSelectedProducts, unsele
                     <div className="product__cart-price">{product.price}</div>
                     <div className="product__cart-popup">
                         {
-                            currentSelectedProducts.find(selectedProductId => selectedProductId === product.id) !== undefined
+                            cartItems.find(item => item.id === product.id) !== undefined
                             && product.categoryId !== 1 ?
                                 <button className="button-main" type="button"
                                         style={{backgroundColor: 'seagreen', color: '#ffffff'}}
-                                        onClick={
-                                            () => unselectProduct(product.id)
-                                        }>
+                                        onClick={() => removeItem(product)}
+                                >
                                     В корзине
                                 </button>
                                 :

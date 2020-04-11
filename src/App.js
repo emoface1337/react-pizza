@@ -14,7 +14,6 @@ const App = () => {
     const [cartItems, setCartItems] = useState([])
     const [cartCount, setCartCount] = useState(0)
     const [isPopupVisible, setPopupVisible] = useState(false)
-    const [currentSelectedProducts, setCurrentSelectedProducts] = useState([])
 
     useEffect(() => {
         axios.get('http://localhost:3001/categories?_embed=products')
@@ -76,30 +75,19 @@ const App = () => {
                 }
             setCartItems([newItem])
         }
-
-        if (currentSelectedProducts.find(selectedProductId => selectedProductId === product.id) === undefined)
-            setCurrentSelectedProducts([...currentSelectedProducts, product.id])
         setCartCount((c) => c + 1)
     }
 
     const removeItem = (item) => {
+        const newItems = cartItems.filter(cartItem => cartItem.id !== item.id)
 
-        const newItems = cartItems.filter(cartItem => cartItem !== item)
-        const newSelectedProducts = currentSelectedProducts.filter(selectedProductId => selectedProductId !== item.id)
-
+        let count = 0
+        if (item.count !== undefined)
+            count = item.count
+        else
+            count = 1
         setCartItems(newItems)
-        setCartCount((c) => c - item.count)
-        setCurrentSelectedProducts(newSelectedProducts)
-    }
-
-    const unselectProduct = (productId) => {
-
-        const newSelectedProducts = currentSelectedProducts.filter(selectedProductId => selectedProductId !== productId)
-        const newItems = cartItems.filter(cartItem => cartItem.id !== productId)
-
-        setCartItems(newItems)
-        setCartCount((c) => c - 1)
-        setCurrentSelectedProducts(newSelectedProducts)
+        setCartCount((c) => c - count)
     }
 
     const decrementCount = (product) => {
@@ -147,9 +135,8 @@ const App = () => {
             <div className={"pizza-app"}>
                 <Header cartCount={cartCount}/>
                 <Route exact path="/"
-                       component={() => <Menu categories={categories} popupOpen={popupOpen} addToCart={addToCart}
-                                              currentSelectedProducts={currentSelectedProducts}
-                                              unselectProduct={unselectProduct}/>}/>
+                       component={() => <Menu categories={categories} popupOpen={popupOpen}
+                                              addToCart={addToCart} cartItems={cartItems} removeItem={removeItem}/>}/>
                 <Route exact path="/cart"
                        component={() => <Cart cartItems={cartItems} removeItem={removeItem}
                                               decrementCount={decrementCount} incrementCount={incrementCount}/>}/>
