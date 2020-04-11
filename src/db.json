@@ -379,10 +379,34 @@
     {
       "id": 30,
       "categoryId": 2,
-      "name": "Додстер",
+      "name": "Ботстер",
       "description": "Фирменный горячий ролл. Цыпленок, томаты, моцарелла и соус ранч в тонкой пшеничной лепешке",
       "price": "159 ₽",
       "imageMain": "/images/snacks/dodster-menu.jpg"
+    },
+    {
+      "id": 31,
+      "categoryId": 2,
+      "name": "Картофель из печи, большой",
+      "description": "Ароматный запеченный картофель с итальянскими травами. Большая порция",
+      "price": "175 ₽",
+      "imageMain": "/images/snacks/fried-potato-menu.jpeg"
+    },
+    {
+      "id": 32,
+      "categoryId": 2,
+      "name": "Паста Четыре сыра",
+      "description": "Паста, моцарелла, сыр блю чиз, смесь сыров чеддер и пармезан, сливочный соус",
+      "price": "265 ₽",
+      "imageMain": "/images/snacks/pasta-four-cheese-menu.jpg"
+    },
+    {
+      "id": 33,
+      "categoryId": 2,
+      "name": "Паста Болоньезе",
+      "description": "Паста, мясной соус болоньезе, моцарелла, итальянские травы",
+      "price": "265 ₽",
+      "imageMain": "/images/snacks/bolognese-menu.jpg"
     }
   ],
   "categories": [

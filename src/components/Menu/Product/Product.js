@@ -16,7 +16,7 @@ const Product = ({product, popupOpen, addToCart}) => {
                     <div className="product__cart-popup">
                         <button className="button-main" type="button" data-toggle="modal" data-target="#pizza-modal"
                                 onClick={product.categoryId === 1 ? () => popupOpen(product.id) : () => addToCart(product)}>
-                            Выбрать
+                            {product.categoryId === 1 ? `Выбрать` : `В корзину`}
                         </button>
                     </div>
                 </div>
