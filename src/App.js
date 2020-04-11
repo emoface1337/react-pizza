@@ -83,11 +83,13 @@ const App = () => {
     }
 
     const removeItem = (item) => {
-        const newItems = cartItems.filter(cartItem =>
-            cartItem !== item
-        )
+
+        const newItems = cartItems.filter(cartItem => cartItem !== item)
+        const newSelectedProducts = currentSelectedProducts.filter(selectedProductId => selectedProductId !== item.id)
+
         setCartItems(newItems)
         setCartCount((c) => c - item.count)
+        setCurrentSelectedProducts(newSelectedProducts)
     }
 
     const unselectProduct = (productId) => {

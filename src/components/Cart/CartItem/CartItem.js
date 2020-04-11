@@ -11,7 +11,7 @@ const CartItem = ({item, removeItem, decrementCount, incrementCount}) => {
             <div className="list-item__product d-flex flex-column">
                 <div className="list-item__product-name">{item.name}</div>
                 <div className="list-item__product-description">
-                    Средняя 30 см, тонкое тесто
+                    Маленькая 30 см, тонкое тесто
                     <div className="list-item__product-ingredients">
                         {
                             item.addedToppings && item.addedToppings.length > 0 ? `Добавлено: ${item.addedToppings.map(topping => (
