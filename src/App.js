@@ -22,6 +22,8 @@ const App = () => {
             })
     }, [])
 
+    const stringPriceToNumberPrice = (stringPrice) => Number(stringPrice.match(/\d/g).join(''))
+
     const addToCart = (product, removedIngredients, addedToppings, cartPrice) => {
         setPopupVisible(false)
         let newItem = {}
@@ -40,7 +42,7 @@ const App = () => {
                         if (product.categoryId === 1)
                             newItem.cartPrice += cartPrice
                         else
-                            newItem.cartPrice += Number(item.price.match(/\d/g).join(''))
+                            newItem.cartPrice += stringPriceToNumberPrice(item.price)
                         return newItem
                     } else {
                         return item
@@ -56,7 +58,7 @@ const App = () => {
                         count: 1,
                         removedIngredients,
                         addedToppings,
-                        cartPrice: Number(product.price.match(/\d/g).join(''))
+                        cartPrice: stringPriceToNumberPrice(product.price)
                     }
                 setCartItems([...cartItems, newItem])
             }
@@ -71,7 +73,7 @@ const App = () => {
                     count: 1,
                     removedIngredients,
                     addedToppings,
-                    cartPrice: Number(product.price.match(/\d/g).join(''))
+                    cartPrice: stringPriceToNumberPrice(product.price)
                 }
             setCartItems([newItem])
         }
