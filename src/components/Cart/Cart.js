@@ -1,10 +1,10 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
-import './Cart.sass'
-import CartItem from "./CartItem/CartItem";
 
-const Cart = ({cartItems, removeItem, decrementCount, incrementCount}) => {
-    // console.log(cartItems)
+import './Cart.sass'
+import CartItem from "./CartItem/CartItem"
+
+const Cart = ({cartItems}) => {
 
     let history = useHistory()
     const handleGoHomeButtonClick = () => {
@@ -25,9 +25,6 @@ const Cart = ({cartItems, removeItem, decrementCount, incrementCount}) => {
                                             <CartItem
                                                 key={index}
                                                 item={item}
-                                                removeItem={removeItem}
-                                                decrementCount={decrementCount}
-                                                incrementCount={incrementCount}
                                             />
                                         ))
                                         : <span>Добавьте что-то в корзину из меню</span>

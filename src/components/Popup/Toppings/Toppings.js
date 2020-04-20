@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 import './Toppings.sass'
-import Topping from "./Topping";
+import Topping from "./Topping"
 
 const Toppings = ({toppings, onToppingClick}) => {
     return (

@@ -1,8 +1,10 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {decrementCount, incrementCount, removeItem} from "../../../store/actions/cartActions"
+
 import './CartItem.sass'
 
-const CartItem = ({item, removeItem, decrementCount, incrementCount}) => {
-    console.log(item)
+const CartItem = ({item, removeItem, incrementCount, decrementCount}) => {
     return (
         <div className="list-item d-flex flex-row align-items-center justify-content-between">
             <div className="list-item__image">
@@ -53,7 +55,7 @@ const CartItem = ({item, removeItem, decrementCount, incrementCount}) => {
                     </i>
                 </button>
             </div>
-            <div className="list-item__price">{item.cartPrice && item.cartPrice ? `${item.cartPrice} ₽`: null}</div>
+            <div className="list-item__price">{item.cartPrice && item.cartPrice ? `${item.cartPrice} ₽` : null}</div>
             <div className="list-item__remove" onClick={() => removeItem(item)}>
                 <i className="svg-icon">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="red">
@@ -70,4 +72,4 @@ const CartItem = ({item, removeItem, decrementCount, incrementCount}) => {
     )
 }
 
-export default CartItem
+export default connect(null, {removeItem, incrementCount, decrementCount})(CartItem)

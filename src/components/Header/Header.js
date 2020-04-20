@@ -26,7 +26,8 @@ const Header = ({cartCount}) => {
                     </div>
                     <div className="col-md-2">
                         <div className="header-button">
-                            <button className="header-button__button button-main" onClick={handleCartButtonClick}>Корзина ({cartCount})
+                            <button className="header-button__button button-main"
+                                    onClick={handleCartButtonClick}>Корзина ({cartCount})
                             </button>
                         </div>
                     </div>
@@ -35,5 +36,6 @@ const Header = ({cartCount}) => {
         </header>
     )
 }
+
 
 export default Header

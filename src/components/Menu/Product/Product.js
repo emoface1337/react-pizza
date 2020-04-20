@@ -1,4 +1,6 @@
 import React from "react"
+import {connect} from 'react-redux'
+import {addToCart, removeItem} from '../../../store/actions/cartActions'
 import './Product.sass'
 
 const Product = ({product, popupOpen, addToCart, cartItems, removeItem}) => {
@@ -20,7 +22,7 @@ const Product = ({product, popupOpen, addToCart, cartItems, removeItem}) => {
                     <div className="product__cart-price">{product.price}</div>
                     <div className="product__cart-popup">
                         {
-                            cartItems.find(item => item.id === product.id) !== undefined
+                            cartItems.length > 0 && cartItems.find(item => item.id === product.id) !== undefined
                             && product.categoryId !== 1 ?
                                 <button className="button-main" type="button"
                                         style={{backgroundColor: 'seagreen', color: '#ffffff'}}
@@ -47,4 +49,4 @@ const Product = ({product, popupOpen, addToCart, cartItems, removeItem}) => {
     )
 }
 
-export default Product
+export default connect(null, {addToCart, removeItem})(Product)

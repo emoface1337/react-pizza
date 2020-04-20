@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState} from "react"
 import './Ingredient.sass'
 
 const Ingredient = ({ingredient, isLast, topping, removeIngredient}) => {

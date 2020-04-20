@@ -1,13 +1,21 @@
 import React, {useState} from 'react'
+import {connect} from 'react-redux'
+import {addToCart} from "../../store/actions/cartActions"
+
 import './Popup.sass'
-import Toppings from "./Toppings/Toppings";
-import Ingredients from "./Ingredients/Ingredients";
+import Toppings from "./Toppings/Toppings"
+import Ingredients from "./Ingredients/Ingredients"
 
 const Popup = ({product, addToCart, popupClose}) => {
 
     const [cartPrice, setCartPrice] = useState(Number(product.price.match(/\d/g).join('')))
     const [removedIngredients, setRemovedIngredients] = useState([])
     const [addedToppings, setAddedToppings] = useState([])
+
+    const onAddToCartClick = (product, removedIngredients, addedToppings, cartPrice) => {
+        addToCart(product, removedIngredients, addedToppings, cartPrice)
+        popupClose()
+    }
 
     const onToppingClick = (newTopping) => {
         if (!addedToppings.some(topping => topping.name === newTopping.name)) {
@@ -35,7 +43,7 @@ const Popup = ({product, addToCart, popupClose}) => {
                         <div className="col-md-7">
                             <div className="pizza-preview d-flex align-items-center justify-content-center">
                                 <img className="pizza-preview__image"
-                                     src="/images/pizza/arriva/arriva-small.jpg"
+                                     src={product.imageMain}
                                      alt={product.name}/>
                             </div>
                         </div>
@@ -66,7 +74,7 @@ const Popup = ({product, addToCart, popupClose}) => {
                                     // isSelected={isSelected}
                                 />
                                 <button className="pizza__add-cart button-main"
-                                        onClick={() => addToCart(product, removedIngredients, addedToppings, cartPrice)}
+                                        onClick={() => onAddToCartClick(product, removedIngredients, addedToppings, cartPrice)}
                                 >Добавить в корзину за {cartPrice} ₽
                                 </button>
                             </div>
@@ -86,4 +94,4 @@ const Popup = ({product, addToCart, popupClose}) => {
     )
 }
 
-export default Popup
+export default connect(null, {addToCart})(Popup)

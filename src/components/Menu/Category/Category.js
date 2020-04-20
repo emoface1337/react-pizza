@@ -1,8 +1,8 @@
 import React from "react"
 import './Category.sass'
-import Product from "../Product/Product";
+import Product from "../Product/Product"
 
-const Category = ({category, popupOpen, addToCart, cartItems, removeItem}) => {
+const Category = ({category, popupOpen, cartItems}) => {
     return (
         <section className="category">
             <div className="container">
@@ -14,9 +14,7 @@ const Category = ({category, popupOpen, addToCart, cartItems, removeItem}) => {
                                 key={product.id}
                                 product={product}
                                 popupOpen={popupOpen}
-                                addToCart={addToCart}
                                 cartItems={cartItems}
-                                removeItem={removeItem}
                             />
                         ))
                     }

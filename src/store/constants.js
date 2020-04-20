@@ -1,0 +1,5 @@
+export const GET_MENU_DATA = 'GET_MENU_DATA'
+export const ADD_TO_CART = 'ADD_TO_CART'
+export const REMOVE_ITEM_CART = 'REMOVE_ITEM_CART'
+export const INC_CART_ITEM_COUNT = 'INC_CART_ITEM_COUNT'
+export const DEC_CART_ITEM_COUNT = 'DEC_CART_ITEM_COUNT'

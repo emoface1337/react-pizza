@@ -1,5 +1,5 @@
-import React from "react";
-import Ingredient from "./Ingredient";
+import React from "react"
+import Ingredient from "./Ingredient"
 
 const Ingredients = ({ingredients, addedToppings, removeIngredient}) => {
 
