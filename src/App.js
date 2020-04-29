@@ -9,13 +9,17 @@ import Menu from './components/Menu/Menu'
 import Popup from './components/Popup/Popup'
 import Cart from './components/Cart/Cart'
 
-const App = ({getMenuData, categories, cartItems, cartCount}) => {
+const App = ({getMenuData, categories, isLoading, error, cartItems, cartCount}) => {
     const [currentProduct, setCurrentProduct] = useState(null)
     const [isPopupVisible, setPopupVisible] = useState(false)
 
     useEffect(() => {
         getMenuData()
     }, [getMenuData])
+
+    const isFetchPending = () => {
+        return isLoading !== false
+    }
 
     const popupOpen = (productId) => {
         let newCurrentProduct = {}
@@ -37,7 +41,7 @@ const App = ({getMenuData, categories, cartItems, cartCount}) => {
             <div className={"pizza-app"}>
                 <Header cartCount={cartCount}/>
                 <Route exact path="/"
-                       component={() => <Menu categories={categories} popupOpen={popupOpen} cartItems={cartItems}/>}/>
+                       component={() => !isFetchPending() ? <Menu categories={categories} popupOpen={popupOpen} cartItems={cartItems}/> : <h1 style={{textAlign: "center"}}>Загрузка...</h1>}/>
 
                 <Route exact path="/cart"
                        component={() => <Cart cartItems={cartItems}/>}/>
@@ -55,7 +59,9 @@ const App = ({getMenuData, categories, cartItems, cartCount}) => {
 
 const mapStateToProps = (state) => {
     return {
-        categories: state.menuReducer,
+        categories: state.menuReducer.products,
+        isLoading: state.menuReducer.isLoading,
+        error: state.menuReducer.error,
         cartItems: state.cartReducer.cartItems,
         cartCount: state.cartReducer.cartCount
     }

@@ -5,11 +5,7 @@ const stringPriceToNumberPrice = (stringPrice) => Number(stringPrice.match(/\d/g
 const cartReducer = (state = {cartItems: [], cartCount: 0}, action) => {
     switch (action.type) {
         case ADD_TO_CART: {
-            // setPopupVisible(false)
-            const product = action.payload.product
-            const removedIngredients = action.payload.removedIngredients
-            const addedToppings = action.payload.addedToppings
-            const cartPrice = action.payload.cartPrice
+            const {product, removedIngredients, addedToppings, cartPrice} = action.payload
             const cartItems = state.cartItems
 
             let newItem = {}
@@ -74,14 +70,12 @@ const cartReducer = (state = {cartItems: [], cartCount: 0}, action) => {
         case REMOVE_ITEM_CART: {
             let item = action.item
 
-            if(item.categoryId !== 1) {
+            if (item.categoryId !== 1) {
                 item = {...item, count: 1, cartPrice: stringPriceToNumberPrice(item.price)}
             }
             const newItems = state.cartItems.filter(cartItem =>
                 JSON.stringify(cartItem) !== JSON.stringify(item)
             )
-            console.log(item)
-            console.log(newItems)
             let count = 0
             if (item.count !== undefined)
                 count = item.count
